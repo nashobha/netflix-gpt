@@ -19,16 +19,22 @@
 - Bug fix - If the user is not logged in redirect /browse to login page and vice versa
   -Unsubscribed to the aoAuthStateChanged callback
 - Add hardcoded values into constant file
--Register TMDB API & create an app  &get access token
+  -Register TMDB API & create an app &get access token
 - Get data from TMDB now playing movies list API
 - Custome hook for Now playing movies
--Create movieSlice
+  -Create movieSlice
 - Update store movies data
--Planning for maina nd secondary container
+  -Planning for maina nd secondary container
 - fetch data for trailer video
--Update store with trailerVideoData
--Embedded the youtue video and make it autoPlay and mute
+  -Update store with trailerVideoData
+  -Embedded the youtue video and make it autoPlay and mute
 - Tailwind classes to make main container look good
+-Build secondary component
+-Build movie list
+-Build movie card
+TMDB image CDN url
+-Made the browse page amazing with Tailwind CSS
+-usePopularMovies custom hook
 
 # Features
 

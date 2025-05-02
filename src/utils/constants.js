@@ -9,3 +9,5 @@ export const USER_AVATAR =  "https://wallpapers.com/images/hd/netflix-profile-pi
     }
   };
   
+  export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w300";
+   
