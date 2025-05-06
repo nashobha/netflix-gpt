@@ -1,9 +1,7 @@
 import React from 'react'
 import MovieCard from "./MovieCard";
 
-const MovieList = ({ title, movies }) => {
-    console.log("movies",movies);
-    
+const MovieList = ({ title, movies }) => {    
     return (
         movies && (
             <div className='px-4'>

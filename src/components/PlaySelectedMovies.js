@@ -2,9 +2,11 @@ import React from 'react'
 import useMovieTrailer from '../hooks/useMovieTrailer';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 const PlaySelectedMovies = () => {
   const { id } = useParams();
-  const video = useSelector((store) => store.movies?.playVideo)
+  const video = useSelector((store) => store.movies?.playVideo) || []
+  
   useMovieTrailer(id);
   const key = video[0]?.key;
 

@@ -14,7 +14,7 @@ const MovieCard = ({ posterPath, movieId }) => {
       <img
         alt="Movie Card"
         src={IMG_CDN_URL + posterPath}
-        onClick={(e) => handleSelectedVideo(movieId)}
+        onClick={() => handleSelectedVideo(movieId)}
       />
     </div>
   );
