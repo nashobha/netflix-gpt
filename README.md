@@ -38,8 +38,16 @@ TMDB image CDN url
 -GPT search feature
 - GPT search bar
 - Multi-language feature in our app
--Integrate GPT API's
-
+-Integrate GPT API's google Gemini gpt
+- Get open API key
+- GPT search  API call
+- Fetch gpt movie suggestions from TMDB
+- Created gptSlice added data
+- Reuased movieList component to make movie suggestion container in GPTSearch page
+- Memoization
+- Added .env file
+- Added .env file to .gitignore file
+- Made our site Responsive
 # Features
 
 - Login/Sign Up

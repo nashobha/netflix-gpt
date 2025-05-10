@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
-import { toggleGPTSearchView } from "../utils/gptSlice";
+import { toggleGPTSearchView,clearGPTSearch } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
@@ -14,6 +14,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
     const user = useSelector(store => store.user);
+    
     const handleSignOut = () => {
         signOut(auth).then(() => { })
             .catch((error) => {
@@ -37,17 +38,20 @@ const Header = () => {
 
     const handleGPTSearchClick = () => {
         dispatch(toggleGPTSearchView());
+        if(showGPTSearch){
+            dispatch(clearGPTSearch());
+        }
     }
 
     const handleLanguageChange = (e) => {
         dispatch(changeLanguage(e.target.value));
     }
     return (
-        <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-            <img className="w-44" src={LOGO} alt="logo"></img>
+        <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+            <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo"></img>
 
             {user && (
-                <div className="flex p-5">
+                <div className="flex p-5 justify-between">
                     {showGPTSearch && (
                          <select className="p-2 m-2 bg-gray-900 text-white" onChange={handleLanguageChange}>
                           {SUPPORTED_LANGUAGES?.map((lang) => (
@@ -57,7 +61,7 @@ const Header = () => {
                         )
                     }
                     <button className="py-1 px-4 mx-4 bg-purple-800 text-white rounded-lg" onClick={handleGPTSearchClick}>{showGPTSearch ? "Homepage" : "GPT Search"}</button>
-                    <img className="w-8 h-8" alt="usericon" src={user?.photoURL} />
+                    <img className="hidden md:block w-8 h-8" alt="usericon" src={user?.photoURL} />
                     <button className="px-2 font-bold text-white" onClick={handleSignOut}>Sign Out</button>
                 </div>
             )}

@@ -63,10 +63,10 @@ const Login = () => {
         <div>
             <Header />
             <div className="absolute">
-                <img src={NETFLIX_BG_LOGO} alt="logo"></img>
+                <img className="h-screen object-cover md:h-fit" src={NETFLIX_BG_LOGO} alt="logo"></img>
             </div>
-            <form onSubmit={(e) => e.preventDefault()} className="w-3/12 absolute bg-black p-12 my-36 mx-auto left-0 right-0 text-white rounded-lg bg-opacity-80">
-                <h1 className="font-bold text-3xl py-4">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+            <form onSubmit={(e) => e.preventDefault()} className="w-full md:w-3/12 absolute bg-black p-12 md:my-36 mx-auto left-0 right-0 text-white rounded-lg bg-opacity-80">
+                <h1 className="font-bold text-xl md:text-3xl py-2 md:py-4">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
                 {!isSignInForm && <input ref={name} type="text" placeholder="Full Name" className="p-3 my-4 w-full bg-gray-700" />}
                 <input ref={email} type="text" placeholder="Email Address" className="p-3 my-4 w-full bg-gray-700" />
                 <input ref={password} type="password" placeholder="Password" className="p-3 my-4 w-full bg-gray-700" />
